@@ -4,4 +4,7 @@ import { Component } from '@angular/core';
     templateUrl: 'app/home/template/home.component.html',
     styleUrls: ['app/home/template/home.component.css']
 })
-export class HomeComponent { }
+export class HomeComponent {
+    nombreConsultorio = "Consultorio Jeje";
+    username = "Antonio";
+ }
