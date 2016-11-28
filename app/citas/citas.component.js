@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var CitasComponent = (function () {
+    function CitasComponent() {
     }
-    AppComponent = __decorate([
+    CitasComponent = __decorate([
         core_1.Component({
-            selector: 'mi-app',
-            templateUrl: './app/app.component.html',
-            styleUrls: ['./app/app.component.css']
+            selector: 'my-citas',
+            templateUrl: 'app/citas/template/citas.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CitasComponent);
+    return CitasComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CitasComponent = CitasComponent;
+//# sourceMappingURL=citas.component.js.map

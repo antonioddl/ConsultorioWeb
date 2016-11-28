@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover no-mgn-btm">
+    <thead>
+        <tr>
+            <th> Username </th>
+            <th> Nombre </th>
+            <th> Contraseña </th>
+            <th> Tipo de Usuario </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of generarArreglo(usuarios)">
+            <td> {{usuario.username}}</td>
+            <td align="center"> {{usuario.nombre}} </td>
+            <td align="center"> {{usuario.password}} </td>
+            <td align="center"> {{usuario.idtipousuario}} </td>
+        </tr>
+    </tbody>
+</table>

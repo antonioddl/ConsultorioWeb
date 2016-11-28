@@ -1,12 +1,26 @@
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Route } from '@angular/router';
 
-import { LoginComponent } from './Login/login.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from '../app/Login/login.component';
+import { HomeComponent } from '../app/home/home.component';
+import { UsuariosList } from '../app/usuario/usuarios-list.component';
 
-export const router: Routes = [
+const IndexRoute: Route = {
+    path: "",
+    component: HomeComponent
+};
+
+const FallBackRoute: Route = {
+    path: '**',
+    component: HomeComponent
+}
+
+const routes: Routes = [
+    { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent }
+    { path: 'usuarios', component: UsuariosList },
+    IndexRoute,
+    FallBackRoute
 ];
 
-export const routes: ModuleWithProviders = RouterModule.forRoot(router);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

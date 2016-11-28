@@ -9,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var http_1 = require('@angular/http');
+require('rxjs/Rx');
+var UsuarioService = (function () {
+    function UsuarioService(http) {
+        this.endpoint_url = "http://localhost/api/usuarios";
+        this.http = http;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'mi-app',
-            templateUrl: './app/app.component.html',
-            styleUrls: ['./app/app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    UsuarioService.prototype.getAllUsuarios = function () {
+        return this.http.get(this.endpoint_url).map(function (res) { return res.json(); });
+    };
+    UsuarioService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], UsuarioService);
+    return UsuarioService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.UsuarioService = UsuarioService;
+//# sourceMappingURL=usuario.service.js.map

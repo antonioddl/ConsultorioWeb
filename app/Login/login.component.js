@@ -14,7 +14,7 @@ var LoginComponent = (function () {
     }
     LoginComponent = __decorate([
         core_1.Component({
-            selector: 'my-login',
+            selector: 'login',
             templateUrl: 'app/Login/template/login.component.html',
             styleUrls: ['app/Login/template/login.component.css']
         }), 

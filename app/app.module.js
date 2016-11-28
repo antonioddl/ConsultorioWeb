@@ -10,18 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var http_1 = require('@angular/http');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var login_component_1 = require('./Login/login.component');
 var home_component_1 = require('./home/home.component');
+var citas_component_1 = require('./citas/citas.component');
+var usuario_service_1 = require('./services/usuario.service');
+var usuarios_list_component_1 = require('./usuario/usuarios-list.component');
+var menu_component_1 = require('./menu/menu.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.routes],
-            declarations: [app_component_1.AppComponent, login_component_1.LoginComponent, home_component_1.HomeComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, app_routing_1.routing],
+            declarations: [
+                app_component_1.AppComponent, login_component_1.LoginComponent, home_component_1.HomeComponent,
+                citas_component_1.CitasComponent, usuarios_list_component_1.UsuariosList, menu_component_1.MenuComponent
+            ],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [usuario_service_1.UsuarioService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
