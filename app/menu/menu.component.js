@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var MenuComponent = (function () {
     function MenuComponent() {
+        this.doctoresShow = false;
     }
     MenuComponent = __decorate([
         core_1.Component({

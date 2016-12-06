@@ -23,31 +23,52 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="wrapper">
-            <div class="side-bar">
-                <ul>
-                    <li class="menu-head">
-                        Home <a><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
-                    </li>
-                    <div class="menu">
-                        <li>
-                            <a> Citas <span class="glyphicon glyphicon-dashboard pull-right"></span></a>
-                        </li>
-                        <li>
-                            <a routerLink="/usuarios"> Usuarios <span class="glyphicon glyphicon-heart pull-right"></span></a>
-                        </li>
-                        <li>
-                            <a> Reportes <span class="glyphicon glyphicon-star pull-right"></span></a>
-                        </li>
-                        <li>
-                            <a> Configuración de Perfil <span class="glyphicon glyphicon-cog pull-right"></span></a>
-                        </li>
-                    </div>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="nav-side-menu">
+    <div class="brand">Brand Logo</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
-                </ul>
-            </div>
-        </div>
+    <div class="menu-list">
+
+        <ul id="menu-content" class="menu-content collapse out">
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                </a>
+            </li>
+
+            <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                <a href="#"><i class="fa fa-gift fa-lg"></i> Citas <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="products">
+                <li><a routerLink="/citas">Calendario</a></li>
+                <li><a href="#">Agendar Nueva</a></li>
+            </ul>
+
+
+            <li data-toggle="collapse" data-target="#service" class="collapsed">
+                <a href="#"><i class="fa fa-users fa-lg"></i> Usuarios <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="service">
+                <li><a routerLink="/usuarios">Consulta</a></li>
+                <li><a routerLink="/altausuario">Registrar Usuario</a></li>
+            </ul>
+
+
+            <li data-toggle="collapse" data-target="#doctores" class="collapsed">
+                <a href="#"><i class="fa fa-car fa-lg"></i> Doctores <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="doctores">
+                <li><a href="#">Consulta</a></li>
+                <li><a routerLink="/altadoctores">Registrar Nuevo</a></li>
+            </ul>
+
+
+            <li>
+                <a href="#">
+                    <i class="fa fa-user fa-lg"></i> Profile
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

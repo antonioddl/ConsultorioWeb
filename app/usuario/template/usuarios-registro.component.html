@@ -1,0 +1,57 @@
+<div class="col-md-6">
+  <form>
+    <legend>Registrar Nuevo</legend>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label" for="username">Username</label>
+      <div class="controls">
+        <input type="text" id="username" name="username" placeholder="Nombre de Usuario" class="form-control" [(ngModel)]="modelo.username"
+          required>
+        <p class="help-block">El nombre de usuario no se puede cambiar mas adelante</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Nombre -->
+      <label class="control-label" for="nombre">Nombre</label>
+      <div class="controls">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="modelo.nombre" required>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">Tipo de Usuario</label>
+      <div class="selectContainer">
+        <select class="form-control" name="tipousuario" [(ngModel)]="modelo.idtipousuario" required>
+                <option value="{{type.id}}"  *ngFor="let type of generarArreglo(types)">{{type.descripcion}}</option>
+            </select>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Contraseña</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Password -->
+      <label class="control-label" for="password_confirm">Confirmar contraseña</label>
+      <div class="controls">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirmar Contraseña" class="form-control"
+          [(ngModel)]="modelo.password" required>
+      </div>
+    </div>
+    <br>
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" (click)="insertarUsuario();">Registrar</button>
+        <div *ngIf="messageOK" class="alert alert-success">{{messageOK}}</div>
+        <div *ngIf="message" class="alert alert-danger"> {{message}} </div>
+      </div>
+    </div>
+  </form>
+</div>

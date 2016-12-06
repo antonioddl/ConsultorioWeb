@@ -19,19 +19,28 @@ var home_component_1 = require('./home/home.component');
 var citas_component_1 = require('./citas/citas.component');
 var usuario_service_1 = require('./services/usuario.service');
 var usuarios_list_component_1 = require('./usuario/usuarios-list.component');
+var index_1 = require('./usuario/index');
 var menu_component_1 = require('./menu/menu.component');
+var index_2 = require('./doctores/index');
+var index_3 = require('./doctores/index');
+var index_4 = require('./services/index');
+var index_5 = require('./services/index');
+var index_6 = require('./services/index');
+//primeng
+var primeng_1 = require('primeng/primeng');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, app_routing_1.routing],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, primeng_1.ScheduleModule, app_routing_1.routing],
             declarations: [
                 app_component_1.AppComponent, login_component_1.LoginComponent, home_component_1.HomeComponent,
-                citas_component_1.CitasComponent, usuarios_list_component_1.UsuariosList, menu_component_1.MenuComponent
+                citas_component_1.CitasComponent, usuarios_list_component_1.UsuariosList, menu_component_1.MenuComponent,
+                index_1.UsuariosRegistro, index_2.DoctoresList, index_3.DoctoresRegistro
             ],
             bootstrap: [app_component_1.AppComponent],
-            providers: [usuario_service_1.UsuarioService]
+            providers: [usuario_service_1.UsuarioService, index_4.DoctorService, index_5.TipoUsuarioService, index_6.especialidadService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

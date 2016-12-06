@@ -19,6 +19,25 @@ var UsuarioService = (function () {
     UsuarioService.prototype.getAllUsuarios = function () {
         return this.http.get(this.endpoint_url).map(function (res) { return res.json(); });
     };
+    UsuarioService.prototype.postUsuario = function (username, nombre, password, idtipousuario) {
+        var body = JSON.stringify({ "username": username, "nombre": nombre, "password": password, "idtipousuario": idtipousuario });
+        var headers = new http_1.Headers({ 'Content-Type': 'aplication/json' });
+        headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:12345/');
+        headers.append('Access-Control-Allow-Methods', 'POST');
+        headers.append('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+        var options = new http_1.RequestOptions({ headers: headers });
+        options.headers;
+        return this.http.post(this.endpoint_url, body, options)
+            .map(function (response) {
+            if (response.json().username != null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        })
+            .catch(this.handleError);
+    };
     UsuarioService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

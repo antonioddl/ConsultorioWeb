@@ -1,0 +1,94 @@
+<div class="col-md-6">
+    <form>
+        <legend>Registrar Nuevo</legend>
+        <div class="control-group">
+            <!-- Username -->
+            <label class="control-label">Nombre</label>
+            <div class="controls">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre(s)" class="form-control" [(ngModel)]="modelo.nombre" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- App -->
+            <label class="control-label">Apellido Paterno</label>
+            <div class="controls">
+                <input type="text" id="app" name="app" placeholder="Apellido Paterno" class="form-control" [(ngModel)]="modelo.app" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Apm -->
+            <label class="control-label">Apellido Materno</label>
+            <div class="controls">
+                <input type="text" id="apm" name="apm" placeholder="Apellido Materno" class="form-control" [(ngModel)]="modelo.apm" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Nombre -->
+            <label class="control-label">Cedula</label>
+            <div class="controls">
+                <input type="text" id="cedula" name="cedula" placeholder="Cedula" class="form-control" [(ngModel)]="modelo.cedula" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Nombre -->
+            <label class="control-label">Fecha de Nacimiento</label>
+            <div class="controls">
+                <input type="date" name="bday" min="1979-12-31" max="1999-12-31" class="form-control" [(ngModel)]="modelo.fechnac" required><br>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Nombre -->
+            <label class="control-label">Genero</label>
+             <div class="selectContainer">
+                <select class="form-control" name="genero" [(ngModel)]="modelo.genero" required>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Nombre -->
+            <label class="control-label">Dirección</label>
+            <div class="controls">
+                <input type="text" id="calle" name="dcalle" placeholder="Calle" class="form-control" [(ngModel)]="modelo.dcalle" required> <br>
+                <input type="number" id="nexterior" name="dnext" placeholder="No. Exterior" class="form-control" [(ngModel)]="modelo.dnext" required> <br>
+                <input type="number" id="ninterior" name="dnint" placeholder="No. Interior" class="form-control" [(ngModel)]="modelo.dnint" > <br>
+                <input type="text" id="colonia" name="dcol" placeholder="Colonia" class="form-control" [(ngModel)]="modelo.dcol" required > <br>
+                <input type="number" id="codigopostal"  name="dcp" placeholder="Código Postal" class="form-control" [(ngModel)]="modelo.dcp" required> <br>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Nombre -->
+            <label class="control-label">Télefono</label>
+            <div class="controls">
+                <input type="number" id="telefono" name="tel" placeholder="Télefono" class="form-control" [(ngModel)]="modelo.tel" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Especialidad</label>
+            <div class="selectContainer">
+                <select class="form-control" name="especialidad" [(ngModel)]="modelo.idespec" required>
+                <option value="{{especialidad.id}}"  *ngFor="let especialidad of generarArreglo(especialidades)">{{especialidad.descripcion}}</option>
+            </select>
+            </div>
+        </div>
+
+        <br>
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-success" (click)="insertarDoctor();">Registrar</button>
+                <div *ngIf="messageOK" class="alert alert-success">{{messageOK}}</div>
+                <div *ngIf="message" class="alert alert-danger"> {{message}} </div>
+            </div>
+        </div>
+    </form>
+</div>
